@@ -18,7 +18,7 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   login(email:string, password:string):Observable<User>{
-    return this.http.post<User>('http://localhost:3000/auth', {
+    return this.http.post<User>('http://reqres.in/api/register', {
       email,
       password,
     }).pipe(
