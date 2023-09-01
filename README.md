@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## You can make mock api via json-server.
 
 https://www.npmjs.com/package/json-server
+
+## I use the api https://reqres.in/
