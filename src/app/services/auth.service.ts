@@ -12,13 +12,13 @@ interface User {
   providedIn: 'root'
 })
 
-
+// 'https://reqres.in/api/register'
 export class AuthService {
 
   constructor(private http:HttpClient) { }
 
   login(email:string, password:string):Observable<User>{
-    return this.http.post<User>('https://reqres.in/api/register', {
+    return this.http.post<User>('http://localhost:3000/register', {
       email,
       password,
     }).pipe(
