@@ -8,6 +8,16 @@ interface User {
   password: string;
 }
 
+interface RegisteredUser {
+  id: string;
+  email: string;
+}
+
+interface ResponseData {
+  token: string;
+  registeredUser: RegisteredUser;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,4 +40,13 @@ export class AuthService {
 
     );}
 }
+
+// This is the respons from json-server-auth:
+// {
+//   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZhZmFAZmFmYS5wbCIsImlhdCI6MTY5NDQzNjU5MSwiZXhwIjoxNjk0NDQwMTkxLCJzdWIiOiI1In0.BRMpoQYrqV-iD8VZv6sJqiphsOgGB9w8DFs71celHAM",
+//   "user": {
+//     "email": "fafa@fafa.pl",
+//     "id": 5
+//   }
+// }
 
