@@ -19,6 +19,7 @@ interface RegisteredUser {
 interface ResponseUserData {
   token: string;
   id: string;
+
 }
 
 @Injectable({
@@ -42,6 +43,7 @@ export class AuthService {
       const responseUserData: ResponseUserData = {
         token: token,
         id: decoded.sub!,
+        
       };
       this.user.next(responseUserData);
       
@@ -56,6 +58,7 @@ export class AuthService {
       .post<User>('http://localhost:3000/users', {
         email,
         password,
+        
       })
       .pipe(
         switchMap((res:any) => {
@@ -67,7 +70,7 @@ export class AuthService {
 
   login(email: string, password: string): Observable<User> {
     return this.http
-      .post<User>('http://localhost:3000/register', {
+      .post<User>('http://localhost:3000/login', {
         email,
         password,
       })
@@ -80,6 +83,8 @@ export class AuthService {
           const responseUserData: ResponseUserData = {
             token: res.token,
             id: decoded.sub!,
+            
+            
           };
           this.user.next(responseUserData);
           return responseUserData;
